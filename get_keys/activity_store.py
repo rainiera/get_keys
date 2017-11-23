@@ -23,14 +23,12 @@ import sqlalchemy
 
 import platform
 if platform.system() == 'Darwin':
-    from selfspy import sniff_cocoa as sniffer
-elif platform.system() == 'Windows':
-    from selfspy import sniff_win as sniffer
+    from get_keys import sniff_cocoa as sniffer
 else:
-    from selfspy import sniff_x as sniffer
+    raise NotImplementedError("This fork does not support other platforms.")
 
-from selfspy import models
-from selfspy.models import Process, Window, Geometry, Click, Keys
+from get_keys import models
+from get_keys.models import Process, Window, Geometry, Click, Keys
 
 
 SKIP_MODIFIERS = {"", "Shift_L", "Control_L", "Super_L", "Alt_L", "Super_R", "Control_R", "Shift_R", "[65027]"}  # [65027] is AltGr in X for some ungodly reason.

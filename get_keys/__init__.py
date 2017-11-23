@@ -28,11 +28,11 @@ from lockfile import LockFile
 import hashlib
 from Crypto.Cipher import Blowfish
 
-from selfspy.activity_store import ActivityStore
-from selfspy.password_dialog import get_password
-from selfspy import check_password
+from get_keys.activity_store import ActivityStore
+from get_keys.password_dialog import get_password
+from get_keys import check_password
 
-from selfspy import config as cfg
+from get_keys import config as cfg
 
 
 def parse_config():
